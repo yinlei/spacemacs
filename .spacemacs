@@ -13,7 +13,7 @@ values."
    dotspacemacs-distribution 'spacemacs
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '()
+   dotspacemacs-configuration-layer-path '("~/spacemacs-private/")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
@@ -30,7 +30,7 @@ values."
      better-defaults
      emacs-lisp
      ;; git
-     ;; markdown
+     markdown
      org
      (shell :variables
             shell-default-height 30
@@ -42,6 +42,9 @@ values."
      html
      smex
      gtags
+     eyebrowse
+
+     lua-config
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -114,7 +117,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   ;; "Source Code Pro"
+   dotspacemacs-default-font '("mononoki"
                                :size 18
                                :weight normal
                                :width normal
@@ -262,7 +266,8 @@ in `dotspacemacs/user-config'."
                         "rawset" "select" "_G" "assert" "collectgarbage" "error" "pcall" "coroutine"
                         "rawequal" "require" "load" "tostring" "tonumber" "xpcall" "gmatch" "gsub"
                         "rep" "reverse" "sub" "upper" "concat" "pack" "insert" "remove" "unpack" "sort"
-                        "lower") company-keywords-alist))
+                        "lower") company-keywords-alist)
+      (setq lua-indent-level 4))
 
     (spacemacs/set-leader-keys-for-major-mode 'lua-mode
       "<tab>" 'hs-toggle-hiding
