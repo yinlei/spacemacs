@@ -250,6 +250,10 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
+  (setq configuration-layer--elpa-archives
+      '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+        ("org-cn"   . "http://elpa.emacs-china.org/org/")
+        ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
   )
 
 (defun dotspacemacs/post-init-lua-mode ()
